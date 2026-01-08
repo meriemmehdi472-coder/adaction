@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Écolvation - Associations</title>
+  <link rel="stylesheet" href="tabord.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animation de feuilles -->
+  <div class="leaf" style="left: 5%; animation-duration: 12s;"></div>
+  <div class="leaf" style="left: 15%; animation-duration: 8s; animation-delay: 1s;"></div>
+  <div class="leaf" style="left: 25%; animation-duration: 10s; animation-delay: 2s;"></div>
+  <div class="leaf" style="left: 75%; animation-duration: 9s; animation-delay: 3s;"></div>
+  <div class="leaf" style="left: 85%; animation-duration: 11s; animation-delay: 4s;"></div>
+  <div class="leaf" style="left: 95%; animation-duration: 7s; animation-delay: 5s;"></div>
+
+  <div class="container">
+    <!-- Header avec image -->
+    <div class="header">
+      <div class="header-image">
+        <div class="icon-placeholder">🌿</div>
+        <!-- <img src="assets/logo-ecolvation.png" alt="Écolvation"> -->
+      </div>
+      <h1>ÉCOAction</h1>
+      <div class="header-subtitle">Associations pour un monde plus vert</div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+      <button id="btn-accueil" class="nav-btn">
+        <span>🏠</span>
+        <span>Accueil</span>
+      </button>
+      <button id="btn-benev" class="nav-btn">
+        <span>👥</span>
+        <span>Bénévoles</span>
+      </button>
+    </div>
+
+    <!-- Carte des statistiques -->
+    <div class="stats-card">
+      <div class="stat">
+        <span class="stat-value" id="total-associations">0</span>
+        <span class="stat-label">Associations actives</span>
+      </div>
+    </div>
+
+    <!-- Grid des associations -->
+    <div class="associations-grid" id="associations-container">
+      <div class="loading">
+        <div class="loading-dots">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="tabord.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détails du bénévole - Écolvation</title>
+  <link rel="stylesheet" href="benevdetail.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Bouton retour en haut -->
+    <button class="back-btn" onclick="window.history.back()">
+      <span>←</span>
+      <span>Retour</span>
+    </button>
+
+    <!-- Header -->
+    <div class="header">
+      <div class="header-image">
+        <div class="icon-placeholder">👤</div>
+      </div>
+      <h2 id="nomBenevole">Chargement...</h2>
+    </div>
+
+    <!-- Tableau des collectes -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Type de déchet</th>
+            <th>Quantité</th>
+            <th>Points</th>
+            <th>Ville</th>
+          </tr>
+        </thead>
+        <tbody id="historique-body">
+          <tr>
+            <td colspan="5" class="loading">
+              <div class="loading-dots">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Totaux -->
+    <div id="totauxBenevoles"></div>
+  </div>
+
+  <script src="benevdetail.js"></script>
+</body>
+</html>

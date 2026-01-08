@@ -1,0 +1,253 @@
+/* === CSS Mobile-First Immersif avec Pulse + Glow + Feuille + Pousses === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset léger */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    background-image: url('mains.jpg');
+    background-repeat: no-repeat;
+    background-size:auto 150%;
+    background-position: center;
+    background-attachment: fixed;
+    /* vert très clair */
+    color: #1b4332;
+    /* vert foncé */
+    line-height: 2;
+    padding: 20px;
+}
+
+/* Titre principal */
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 80px;
+    color: #2d6a4f;
+    /* vert nature */
+}
+
+/* Grille des bénévoles */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+}
+
+/* Carte bénévole avec pulse et glow */
+.card {
+    background: linear-gradient(145deg, #d9f0e1, #b7e4c7);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    animation: pulse 6s infinite;
+    text-align: center;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Bordure animée et icône au hover */
+.card::before {
+    content: "🍃";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    border-color: #52b788;
+    /* Glow subtil */
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        0 0 20px 3px rgba(82, 183, 136, 0.4),
+        0 0 30px 5px rgba(82, 183, 136, 0.2);
+}
+
+/* Titres et textes */
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #1b4332;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #2f855a;
+    margin-bottom: 5px;
+}
+
+/* Boutons */
+button {
+    cursor: pointer;
+    padding: 8px 12px;
+    margin: 5px 5px 0 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Animation “vibration de feuille” */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-2px) rotate(-1deg);
+    }
+
+    40% {
+        transform: translateX(2px) rotate(1deg);
+    }
+
+    60% {
+        transform: translateX(-2px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translateX(2px) rotate(1deg);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+button:hover {
+    animation: shake 0.3s ease-in-out;
+}
+
+.btnDet {
+    background-color: #40916c;
+    color: #fff;
+}
+
+.btnDet:hover {
+    background-color: #52b788;
+}
+
+.toggle-btn {
+    background-color: #74c69d;
+    color: #fff;
+}
+
+.toggle-btn:hover {
+    background-color: #95d5b2;
+}
+
+/* Liste des collectes avec animation pousse */
+.card ul {
+    list-style-type: none;
+    margin-top: 10px;
+    padding-left: 0;
+}
+
+.card ul li {
+    background: linear-gradient(90deg, #b7e4c7, #d9f0e1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    color: #1b4332;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: grow 0.5s forwards;
+}
+
+/* Délais de croissance pour chaque élément */
+.card ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.card ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.card ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.card ul li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.card ul li:hover {
+    transform: translateX(5px) scale(1.05);
+    background: linear-gradient(90deg, #d9f0e1, #b7e4c7);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Animation pousse */
+@keyframes grow {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Message "Aucune collecte" */
+.no-collecte {
+    background-color: #ffe8d6;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #7c4d2f;
+    margin-top: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transform: scale(0.8);
+    animation: grow 0.5s forwards;
+}
+
+/* === Responsiveness === */
+
+/* Tablettes */
+@media (min-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
